@@ -1,1 +1,259 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Apology for Gauri ❤️</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ background:#fff4f5;
+ color:#67434e;
+ font-family:Georgia,serif;
+ text-align:center;
+ overflow-x:hidden;
+}
+section{
+ min-height:100vh;
+ padding:65px 22px;
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ justify-content:center;
+ position:relative;
+}
+h1{font-size:36px;color:#bd5579}
+h2{font-size:29px;color:#bd5579}
+p{font-size:17px;line-height:1.8;max-width:430px}
+.small{font-size:13px;color:#a77d89}
+.card{
+ background:#fff;
+ padding:28px;
+ border-radius:22px;
+ box-shadow:0 8px 30px #e9bacb66;
+ width:min(100%,430px);
+ margin:15px auto;
+}
+button{
+ background:#d65b8b;
+ color:white;
+ border:0;
+ padding:14px 30px;
+ border-radius:30px;
+ font-size:16px;
+ margin:12px;
+ cursor:pointer;
+ box-shadow:0 4px 12px #d65b8b44;
+}
+button:active{transform:scale(.96)}
+.secondary{background:#e8a2b8}
+.heart{
+ font-size:75px;
+ animation:beat 1s infinite;
+}
+@keyframes beat{
+ 50%{transform:scale(1.2)}
+}
+.envelope{
+ font-size:95px;
+ cursor:pointer;
+ animation:float 2s infinite;
+}
+@keyframes float{
+ 50%{transform:translateY(-12px)}
+}
+.teddy{font-size:95px}
+.hidden{display:none!important}
+.timeline{
+ border-left:2px solid #e7a2b8;
+ padding-left:22px;
+ text-align:left;
+ max-width:350px;
+}
+.timeline p{font-size:15px}
+.memories{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:12px;
+ width:100%;
+ max-width:430px;
+}
+.memory{
+ background:white;
+ border-radius:15px;
+ padding:12px;
+ box-shadow:0 4px 15px #e9bacb66;
+}
+.memory img{
+ width:100%;
+ height:130px;
+ object-fit:cover;
+ border-radius:10px;
+}
+input[type=file]{max-width:100%;font-size:13px}
+footer{padding:25px;color:#b47c8d}
+#confetti{font-size:28px}
+</style>
+</head>
+
+<body>
+
+<section>
+ <div class="heart">💗</div>
+ <h1>A Little Apology for Gauri</h1>
+ <p>A little something made with love, just for you.</p>
+ <p class="small">From your Omkar ❤️</p>
+ <button onclick="document.getElementById('letter').scrollIntoView({behavior:'smooth'})">
+ Open your little surprise 💌
+ </button>
+</section>
+
+<section id="letter">
+ <h2>A letter for you...</h2>
+ <div class="envelope" onclick="openLetter()">💌</div>
+ <p class="small">Tap the envelope to open it</p>
+ <div class="card hidden" id="letterText">
+  <h2>My dearest Gauri ❤️</h2>
+  <p>
+   I know I haven't been perfect. I know sometimes I make mistakes
+   and sometimes I don't express myself the way I should.
+  </p>
+  <p>
+   But one thing I never want you to doubt is how much you mean to me.
+   You're incredibly special to me.
+  </p>
+  <p><b>I'm truly sorry, Gauri.</b></p>
+  <p>Love always,<br>Omkar ❤️</p>
+ </div>
+</section>
+
+<section>
+ <div class="teddy">🧸</div>
+ <h2>I'm really sorry, Gauri</h2>
+ <div class="card">
+  <p>
+   If I could go back and change the moments that hurt you,
+   I would do it without thinking twice.
+  </p>
+  <p>
+   I don't want to win arguments. I want to understand you,
+   make you smile and keep choosing you.
+  </p>
+  <p><b>You deserve all the love in the world. 💗</b></p>
+ </div>
+</section>
+
+<section>
+ <h2>If I could rewind time...</h2>
+ <div class="card">
+  <div style="font-size:70px">⏰</div>
+  <h1 id="clock">11:11</h1>
+  <p>
+   I'd go back to every moment I made you sad
+   and replace it with a hug, a kiss and a reminder
+   that you're loved.
+  </p>
+  <button onclick="rewind()">⏪ Rewind time</button>
+  <p id="rewindMessage" class="small"></p>
+ </div>
+</section>
+
+<section>
+ <h2>Our little memories 📸</h2>
+ <p>Every moment with you is a little piece of happiness.</p>
+
+ <div class="memories">
+  <div class="memory">
+   <div style="font-size:55px">🌷</div>
+   <b>Our smiles</b>
+   <p class="small">My favourite view.</p>
+  </div>
+  <div class="memory">
+   <div style="font-size:55px">🌅</div>
+   <b>Our moments</b>
+   <p class="small">Memories I'll treasure.</p>
+  </div>
+  <div class="memory">
+   <div style="font-size:55px">💕</div>
+   <b>Our love</b>
+   <p class="small">My favourite feeling.</p>
+  </div>
+  <div class="memory">
+   <div style="font-size:55px">🫶</div>
+   <b>Us</b>
+   <p class="small">My favourite team.</p>
+  </div>
+ </div>
+
+ <p class="small">You can add our photos to this section later ❤️</p>
+</section>
+
+<section>
+ <div class="heart">💖</div>
+ <h2>One little question...</h2>
+ <div class="card">
+  <p>Gauri, can you forgive your silly Omkar? 🥺</p>
+  <button onclick="forgive()">YES ❤️</button>
+  <button class="secondary" id="noButton" onclick="moveNo()">NO 🙈</button>
+  <p id="answer"></p>
+ </div>
+</section>
+
+<section id="ending" class="hidden">
+ <div class="heart">❤️</div>
+ <h1>YAYYYYY! 🥹</h1>
+ <h2>I love you, Gauri!</h2>
+ <div class="card">
+  <p>
+   Thank you for being you.
+   Thank you for being part of my life.
+  </p>
+  <p>
+   I'll keep trying to be better, to understand you better
+   and to make you smile every single day.
+  </p>
+  <h2>Forever yours,<br>Omkar ❤️</h2>
+  <div id="confetti">💕 💗 💖 💞 💕</div>
+ </div>
+</section>
+
+<footer>
+ Made with all my love, by Omkar ❤️
+</footer>
+
+<script>
+function openLetter(){
+ document.getElementById('letterText').classList.remove('hidden');
+ document.querySelector('.envelope').innerHTML='💌';
+}
+
+let rewindCount=0;
+function rewind(){
+ rewindCount++;
+ document.getElementById('rewindMessage').innerText=
+ rewindCount===1
+ ? "Rewinding... I'd choose you again and again. ❤️"
+ : "One more time... because you're worth everything. 💗";
+}
+
+function moveNo(){
+ const btn=document.getElementById('noButton');
+ btn.innerText="Are you sure? 🥺";
+ btn.style.transform=
+ `translate(${Math.random()*100-50}px,${Math.random()*50-25}px)`;
+}
+
+function forgive(){
+ document.getElementById('answer').innerText=
+ "YOU MADE OMKAR THE HAPPIEST PERSON! 🥹❤️";
+ document.getElementById('ending').classList.remove('hidden');
+ document.getElementById('ending').scrollIntoView({behavior:'smooth'});
+}
+</script>
+
+</body>
+</html>
+
